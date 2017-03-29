@@ -1,0 +1,416 @@
+$pink :  #CD5554;
+$dark-blue : #313D4B;
+$green : #6ABE83;
+$grey : #21A8A3;
+
+$title : "Lato-Bold";
+$off : "Lato-Light";
+$body : "Lato-Regular";
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    // overflow: hidden;
+    font-family: $body;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    .panel {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &#panel-1 {
+            background-color:  #CD5554;
+            .next {
+                color: white;
+                &::after {
+                    background-color: white;
+                }
+            }
+        }
+
+        &#panel-2 {
+            background-color: $dark-blue;
+            color: white;
+            flex-direction: row;
+            .next {
+                color: white;
+                &::after {
+                    background-color: white;
+                }
+            }
+
+            .button {
+                a {
+                    color: white;
+
+                }
+
+                &:hover {
+                    background-color: white;
+                    color: $dark-blue;
+                    a {
+                        color: $dark-blue;
+                    }
+                }
+
+            }
+
+            .img {
+                background-image: url("../data/img/cover_include_2.jpg");
+
+            }
+        }
+
+        &#panel-3 {
+            .next {
+                color: white;
+                &::after {
+                    background-color: white;
+                }
+            }
+
+            background-color : $green;
+            color: white;
+            .information .ctn-buttons .button {
+                background-color: $green;
+                border-color: white;
+                a {
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: white;
+                    a {
+                        color: $green;
+                    }
+                }
+            }
+
+            .img {
+                background-image: url("../data/img/cover_include_1.jpg");
+            }
+        }
+
+        &#panel-4 {
+            color: white;
+            background-color : $grey;
+            .information .ctn-buttons .button {
+                border-color: white;
+            }
+
+            .img {
+                background-image: url("../data/img/tumblr_include.jpg");
+            }
+
+            .button {
+                background-color: $grey;
+                color: white;
+                a {
+                    color: white;
+                }
+                &:hover {
+                    background-color: white;
+                    a {
+                        color: $grey;
+                    }
+                }
+            }
+        }
+
+        header {
+            text-align: center;
+            position: relative;
+            h1 {
+                font-family: $title;
+                margin: 0.2rem;
+                margin-top: 1rem;
+                color: white;
+                padding: 0;
+                font-size: 4rem;
+            }
+
+            .subtitle {
+                font-size: 2rem;
+                display: inline;
+                padding: 0.5rem;
+                color: white;
+            }
+        }
+
+        .left {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img {
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: #EEEFEA;
+
+            // &::after {
+            //     content: '';
+            //     width: 50%;
+            //     height: 100%;
+            //     position: absolute;
+            //     // z-index: 0;
+            //     background-color: $dark-blue;
+            //     opacity: 0.3;
+            //     top: 0;
+            // }
+        }
+
+        .information {
+            font-size: 1.5rem;
+            flex-direction: column;
+            justify-content: center;
+
+            .description {
+                min-height: 3rem;
+                font-size: 1.2rem;
+                max-width: 50rem;
+                text-align: center;
+                margin: 3rem;
+            }
+
+            .ctn-buttons {
+                display: flex;
+                width: 100%;
+                max-width: 35rem;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: row;
+                .button {
+                    border: 2px solid white;
+                    padding: 0.5rem 1.5rem;
+                    cursor: pointer;
+                    transition: 0.5s;
+
+                    &:hover {
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+
+        .next {
+            position: absolute;
+            bottom: 0;
+            padding-bottom: 6rem;
+            cursor: pointer;
+            text-align: center;
+
+            &.nleft {
+                width: 50%;
+                left: 0;
+            }
+
+            &.nright {
+                width: 50%;
+                left: 50%;
+            }
+
+            &::after {
+                content: '';
+                background-color: black;
+                width: 2px;
+                // width: 100%;
+                height: 5rem;
+                left: calc(50% - 1px);
+                // left: 0;
+                bottom: 0;
+                position: absolute;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    p {
+        text-align: center;
+    }
+}
+
+@media (max-width : 920px) {
+    .container {
+        .panel {
+            width: 100%;
+
+            &#panel-1 {
+                padding: 2rem;
+                header {
+                    h1 { font-size: 2rem; }
+                    .subtitle { font-size: 1.5rem; }
+                }
+
+                .next {
+                    p {
+                        background-color: $pink;
+                    }
+
+                    p::after {
+                        border-color : white transparent transparent transparent;
+                    }
+                }
+            }
+
+            &#panel-2 {
+                .img {
+                    &::after {
+                        border-color: $dark-blue transparent transparent transparent;
+                    }
+                }
+
+                .next {
+                    &::after, p {
+                        background-color: $dark-blue;
+                    }
+
+                    p::after {
+                        border-color : $dark-blue transparent transparent transparent;
+                    }
+                }
+            }
+
+            &#panel-3 {
+                .img {
+                    &::after {
+                        border-color: $green transparent transparent transparent;
+                    }
+                }
+
+                .next {
+                    &::after, p {
+                        background-color: $green;
+                    }
+
+                    p::after {
+                        border-color : $green transparent transparent transparent;
+                    }
+                }
+            }
+
+            &#panel-4 {
+                .img {
+                    &::after {
+                        border-color: $grey transparent transparent transparent;
+                    }
+                }
+            }
+
+            &#panel-2, &#panel-3, &#panel-4 {
+                flex-direction: column;
+            }
+
+            &#panel-2, &#panel-4 {
+                flex-direction: column-reverse;
+            }
+
+            .information {
+                width: 100%;
+                position: relative;
+                .description {
+                    height: auto;
+                    min-height: 0;
+                    margin: 0;
+                }
+                .ctn-buttons {
+                    flex-direction: column;
+                    .button {
+                        margin: 1rem;
+                    }
+                }
+            }
+
+            .img {
+                width: 100%;
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    z-index: 1;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 20px 20px 0 20px;
+                    border-color: black transparent transparent transparent;
+                    top: 0;
+                }
+            }
+
+            .next {
+                display: inline;
+                // background-color: black;
+                z-index: 3;
+                margin-bottom: 1rem;
+                padding-bottom: 0;
+                &.nleft, &.nright {
+                    width:auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                p {
+                    padding: 0.5rem 1.5rem;
+                    position: relative;
+                    z-index: 2;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        z-index: 1;
+                        bottom: -10px;
+                        width: 0;
+                        height: 0;
+                        right: 0;
+                        left: 0;
+                        margin: auto;
+                        border-style: solid;
+                        border-width: 10px 10px 0 10px;
+                        border-color: black transparent transparent transparent;
+                    }
+                }
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+}
