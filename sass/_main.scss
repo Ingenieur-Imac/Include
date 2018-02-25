@@ -1,7 +1,10 @@
 $pink :  #CD5554;
 $dark-blue : #313D4B;
 $green : #6ABE83;
-$grey : #21A8A3;
+$turquoise : #21A8A3;
+$purple: #C54F99;
+$grey: #232323;
+$red: #CD5554;
 
 $title : "Lato-Bold";
 $off : "Lato-Light";
@@ -40,8 +43,8 @@ html, body {
         align-items: center;
         position: relative;
 
-        &#panel-1 {
-            background-color:  #CD5554;
+        &#header {
+            background-color: $red;
             .next {
                 color: white;
                 &::after {
@@ -50,7 +53,7 @@ html, body {
             }
         }
 
-        &#panel-2 {
+        &#include-v2 {
             background-color: $dark-blue;
             color: white;
             flex-direction: row;
@@ -83,7 +86,10 @@ html, body {
             }
         }
 
-        &#panel-3 {
+        &#include-v1 {
+            background-color: $green;
+            color: white;
+            flex-direction: row;
             .next {
                 color: white;
                 &::after {
@@ -91,17 +97,14 @@ html, body {
                 }
             }
 
-            background-color : $green;
-            color: white;
-            .information .ctn-buttons .button {
-                background-color: $green;
-                border-color: white;
+            .button {
                 a {
                     color: white;
                 }
 
                 &:hover {
                     background-color: white;
+                    color: $green;
                     a {
                         color: $green;
                     }
@@ -110,32 +113,101 @@ html, body {
 
             .img {
                 background-image: url("../data/img/cover_include_1.jpg");
+                background-color: #dde0e5;
             }
         }
 
-        &#panel-4 {
+        &#tumblr-v2 {
+            .next {
+                color: white;
+                &::after {
+                    background-color: white;
+                }
+            }
+
+            background-color : $turquoise;
             color: white;
-            background-color : $grey;
             .information .ctn-buttons .button {
+                background-color: $turquoise;
                 border-color: white;
+                a {
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: white;
+                    a {
+                        color: $turquoise;
+                    }
+                }
             }
 
             .img {
                 background-image: url("../data/img/tumblr_include.jpg");
+                background-color: #FAFAFA;
+            }
+        }
+
+        &#include-v3 {
+            background-color: $grey;
+            color: white;
+            flex-direction: row;
+            .next {
+                color: white;
+                &::after {
+                    background-color: white;
+                }
             }
 
             .button {
-                background-color: $grey;
-                color: white;
                 a {
                     color: white;
                 }
+
                 &:hover {
                     background-color: white;
+                    color: $grey;
                     a {
                         color: $grey;
                     }
                 }
+            }
+
+            .img {
+                background-image: url("../data/img/cover_include_3.jpg");
+                background-color: #FFFFFF;
+            }
+        }
+
+        &#pinterest-v3 {
+            background-color: $purple;
+            color: white;
+            flex-direction: row;
+            .next {
+                color: white;
+                &::after {
+                    background-color: white;
+                }
+            }
+
+            .button {
+                a {
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: white;
+                    color: $purple;
+                    a {
+                        color: $purple;
+                    }
+                }
+            }
+
+            .pinterest [class*="embed_grid"] {
+                max-width: 100%;
+                min-width: 100%;
+                height: 100%;
             }
         }
 
@@ -247,7 +319,7 @@ html, body {
 
             &::after {
                 content: '';
-                background-color: black;
+                background-color: white;
                 width: 2px;
                 // width: 100%;
                 height: 5rem;
@@ -272,7 +344,7 @@ footer {
         .panel {
             width: 100%;
 
-            &#panel-1 {
+            &#header {
                 padding: 2rem;
                 header {
                     h1 { font-size: 2rem; }
@@ -281,37 +353,55 @@ footer {
 
                 .next {
                     p {
-                        background-color: $pink;
+                        background-color: $grey;
                     }
 
                     p::after {
-                        border-color : white transparent transparent transparent;
+                        border-color : $grey transparent transparent transparent;
                     }
                 }
             }
 
-            &#panel-2 {
+            &#include-v1 {
                 .img {
                     &::after {
-                        border-color: $dark-blue transparent transparent transparent;
+                        border-color: $turquoise transparent transparent transparent;
                     }
                 }
 
                 .next {
                     &::after, p {
-                        background-color: $dark-blue;
+                        background-color: $turquoise;
                     }
 
                     p::after {
-                        border-color : $dark-blue transparent transparent transparent;
+                        border-color : $turquoise transparent transparent transparent;
                     }
                 }
             }
 
-            &#panel-3 {
+            &#include-v2 {
                 .img {
                     &::after {
-                        border-color: $green transparent transparent transparent;
+                        border-color: $purple transparent transparent transparent;
+                    }
+                }
+
+                .next {
+                    &::after, p {
+                        background-color: $turquoise;
+                    }
+
+                    p::after {
+                        border-color : $turquoise transparent transparent transparent;
+                    }
+                }
+            }
+
+            &#tumblr-v2 {
+                .img {
+                    &::after {
+                        border-color: $dark-blue transparent transparent transparent;
                     }
                 }
 
@@ -326,19 +416,48 @@ footer {
                 }
             }
 
-            &#panel-4 {
+            &#include-v3 {
                 .img {
                     &::after {
-                        border-color: $grey transparent transparent transparent;
+                        border-color: $red transparent transparent transparent;
+                    }
+                }
+
+                .next {
+                    &::after, p {
+                        background-color: $purple;
+                    }
+
+                    p::after {
+                        border-color : $purple transparent transparent transparent;
                     }
                 }
             }
 
-            &#panel-2, &#panel-3, &#panel-4 {
+            &#pinterest-v3 {
+                .img {
+                    &::after {
+                        border-color: $purple transparent transparent transparent;
+                    }
+                }
+
+                .next {
+                    &::after, p {
+                        background-color: $dark-blue;
+                    }
+
+                    p::after {
+                        border-color : $dark-blue transparent transparent transparent;
+                    }
+                }
+            }
+            
+
+            &#include-v1, &#include-v2, &#tumblr-v2, &#include-v3, &#pinterest-v3 {
                 flex-direction: column;
             }
 
-            &#panel-2, &#panel-4 {
+            &#include-v3, &#include-v2, &#include-v1 {
                 flex-direction: column-reverse;
             }
 
@@ -358,7 +477,7 @@ footer {
                 }
             }
 
-            .img {
+            .img, .pinterest {
                 width: 100%;
                 position: relative;
                 &::after {
