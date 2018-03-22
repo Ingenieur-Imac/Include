@@ -265,8 +265,10 @@ footer {
         flex-direction: column; }
         .container .panel .information .ctn-buttons .button {
           margin: 1rem; }
+    .container .panel .img, .container .panel .pinterest {
       width: 100%;
       position: relative; }
+      .container .panel .img::after, .container .panel .pinterest::after {
         content: '';
         position: absolute;
         z-index: 1;
